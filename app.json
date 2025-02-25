@@ -7,15 +7,30 @@
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
+    "notification": {
+      "useNextNotificationsApi": true
+    },
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
+    },
+    "backgroundFetch": {
+      "enabled": true
     },
     "android": {
+      "permissions": [
+        "NOTIFICATIONS",
+        "NOTIFICATIONS"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#000000"
+      },
+      "package": "com.medart.ewa",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "bundler": "metro",
@@ -25,17 +40,35 @@
     "plugins": [
       "expo-router",
       [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#ffffff"
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#000000"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8c559995-6c01-48d7-96b6-84e89eeaf562"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8c559995-6c01-48d7-96b6-84e89eeaf562"
     }
   }
 }
